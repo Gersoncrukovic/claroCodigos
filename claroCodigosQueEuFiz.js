@@ -59,3 +59,33 @@ dataLayer.push({
 		}
 	}
 });
+
+
+function(){
+  if({{Event}} === 'addToCart' | {{Event}} === 'checkout' | {{Event}} === 'purchase'){
+    var quantProdutos = {{EEC Products -> GA4 Items}}.length;
+  // Validar se temos mais do que um produto 
+    if(quantProdutos > 1){
+      var categoriasProdutos = [];
+      for(i=0; quantProdutos > i;i++){
+        var brandProdutos = {{EEC Products -> GA4 Items}}[i].item_brand;
+        // Verificar se a Brand é um plano
+        if(brandProdutos == 'claro-movel'){
+          categoriasProdutos.push({{EEC Products -> GA4 Items}}[i].item_category + '_' + {{EEC Products -> GA4 Items}}[i].item_category3);
+        }
+        // Verificar se a Brand é um aparelho ou acessorio
+        if(brandProdutos != 'claro-movel'){
+          categoriasProdutos.push({{EEC Products -> GA4 Items}}[i].item_category);
+        }
+      }
+        // Cria uma string com todos os valores e substitui '[',']','"' e ','
+        var stringlistproducts = JSON.stringify(categoriasProdutos);
+        return stringlistproducts.replace(/\[|\]|"|/g, '').replace(/,/g, '_');
+    }
+    var brandProdutos = {{EEC Products -> GA4 Items}}[0].item_brand;
+    if(brandProdutos != 'claro-movel'){
+      return {{EEC Products -> GA4 Items}}[0].item_category;
+    }
+    return ({{EEC Products -> GA4 Items}}[0].item_category + '_' + {{EEC Products -> GA4 Items}}[0].item_category3);
+  }
+}
