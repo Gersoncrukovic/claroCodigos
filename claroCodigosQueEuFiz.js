@@ -59,7 +59,22 @@ dataLayer.push({
 		}
 	}
 });
+//------------------------------------------------------------------------------------------------------------------------------------------
 
+//teste camada de dados nova GA4
+dataLayer.push({
+'tipo_compra':'portability', 
+  'event': 'purchase',
+  'ecommerce': {
+    'items': [
+      {
+        'item_category': 'plano/celular/'
+      }
+    ]
+  }
+});
+
+//------------------------------------------------------------------------------------------------------------------------------------------
 
 function(){
   if({{Event}} === 'addToCart' | {{Event}} === 'checkout' | {{Event}} === 'purchase'){
@@ -89,3 +104,63 @@ function(){
     return ({{EEC Products -> GA4 Items}}[0].item_category + '_' + {{EEC Products -> GA4 Items}}[0].item_category3);
   }
 }
+
+
+
+//------------------------------------------------------------------------------------------------------------------------------------------
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+  event: 'view_item_list',
+  ecommerce: {
+    items: [{
+      item_name: 'Finnish magical parka',
+      item_id: 'mp1122',
+      price: '31.10',
+      item_brand: 'PARKA4LIFE',
+      item_category: 'Apparel',
+      item_category2: 'Coats',
+      item_category3: 'Parkas',
+      item_category4: 'Unisex',
+      item_variant: 'Navy blue',
+      item_list_name: 'Featured items',
+      item_list_id: 'FI1',
+      index: 1,
+      quantity: '1'
+    },{
+      item_name: 'Swedish regular parka',
+      item_id: 'sp2323',
+      price: '92.00',
+      item_brand: 'PARKA4LIFE',
+      item_category: 'Apparel',
+      item_category2: 'Coats',
+      item_category3: 'Parkas',
+      item_category4: 'Unisex',
+      item_variant: 'Black',
+      item_list_name: 'Featured items',
+      item_list_id: 'FI1',
+      index: 2,
+      quantity: '1'
+    }]
+  }
+});
+//---------------------------------------------------------------------------------
+
+function(){
+  var phone = document.querySelectorAll("#txt-telefone-aquisicao, #txt-telefone-migracao, #txt-telefone-portabilidade");
+    for(var i = 0; phone.lenght > i; i++){
+    if(phone[i].value != ''){
+      return phone[i].value;
+    }
+    }
+  }
+//---------------------------------------------------------------------------------
+ function(){
+    if(document.querySelector('#txt-telefone-migracao').value != ''){return document.querySelector('#txt-telefone-migracao').value};
+    if(document.querySelector('#txt-telefone-portabilidade').value != ''){return document.querySelector('#txt-telefone-portabilidade').value};
+    if(document.querySelector('#txt-telefone-aquisicao').value != ''){return document.querySelector('#txt-telefone-aquisicao').value};
+  }
+
+
+
+
+
