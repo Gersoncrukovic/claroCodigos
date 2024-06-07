@@ -159,6 +159,18 @@ function(){
     if(document.querySelector('#txt-telefone-portabilidade').value != ''){return document.querySelector('#txt-telefone-portabilidade').value};
     if(document.querySelector('#txt-telefone-aquisicao').value != ''){return document.querySelector('#txt-telefone-aquisicao').value};
   }
+//----------------------------------------------------------------------------------
+
+Ve se o navegadordo cliente é dark ou light 
+function () {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      return 'Dark';
+    }
+    else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+      return 'Light';
+    }
+    return 'No Preference';
+  }
 
 
 
