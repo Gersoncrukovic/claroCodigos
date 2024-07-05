@@ -183,7 +183,16 @@ document.querySelector("#logo > ytd-yoodle-renderer > picture > img").style.disp
 window.addEventListener('beforeunload', (event) => {
   event.preventDefault(); // Impede a navegação ou fechamento
 });
+//---------------------------------------------------------------------------------------------
 
+document.querySelector("#btn-eu-quero-23283").addEventListener('click',function () {
+    console.log('Cliquei no botão e disparei o evento')
+    dataLayer.push({
+        event : 'clique',
+        custom_section: 'lp_movel:home',
+        custom_section: 'planos:eu_quero',
+    })
+})
 
 
 
