@@ -193,6 +193,24 @@ document.querySelector("#btn-eu-quero-23283").addEventListener('click',function 
         custom_section: 'planos:eu_quero',
     })
 })
+//--------------------------------------------------------------------------------------------------
+
+document.querySelector("#submit").addEventListener('click',function(){
+    if(!document.querySelector("#submit").disabled){
+        console.log(document.querySelector("#phonenumber").value)
+    }
+})
+//--------------------------------------------------------------------------------------------------
+<script>
+document.querySelector("#submit").addEventListener('click', function() {
+    if (!document.querySelector("#submit").disabled) {
+        var phoneNumber = document.querySelector("#phonenumber").value;
+        return phoneNumber;
+    }
+});
+</script>
+//-------------------------------------------------------------------------------------------------
+
 
 
 
