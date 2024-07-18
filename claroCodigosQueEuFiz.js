@@ -164,6 +164,24 @@ function(){
     if(document.querySelector('#txt-telefone-portabilidade').value != ''){return document.querySelector('#txt-telefone-portabilidade').value};
     if(document.querySelector('#txt-telefone-aquisicao').value != ''){return document.querySelector('#txt-telefone-aquisicao').value};
   }
+
+//dado de telefone sanitizado
+function(){
+  function sanitizePhoneNumber(phoneNumber) {
+    return phoneNumber.replace(/[()\-\s]/g, '');
+  }
+
+  if(document.querySelector('#txt-telefone-migracao').value != ''){
+    return '+55' + sanitizePhoneNumber(document.querySelector('#txt-telefone-migracao').value);
+  }
+  if(document.querySelector('#txt-telefone-portabilidade').value != ''){
+    return '+55' + sanitizePhoneNumber(document.querySelector('#txt-telefone-portabilidade').value);
+  }
+  if(document.querySelector('#txt-telefone-aquisicao').value != ''){
+    return '+55' + sanitizePhoneNumber(document.querySelector('#txt-telefone-aquisicao').value);
+  }
+}
+
 //----------------------------------------------------------------------------------
 
 //Ve se o navegadordo cliente é dark ou light 
