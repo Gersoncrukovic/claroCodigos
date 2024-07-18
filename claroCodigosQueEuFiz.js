@@ -13,12 +13,14 @@ document.getElementById("inputSubmit").addEventListener("click", function() {
     console.log('foi?');
 });
 
+//---------------------------------------------------------------------------------
 
 //cria um numero aleatorio arredondado
 function() {
     return Math.floor(Math.random() * 100)+1;
 }
 
+//---------------------------------------------------------------------------------
 
 //teste de push manual
 dataLayer.push({
@@ -59,6 +61,8 @@ dataLayer.push({
 		}
 	}
 });
+
+
 //------------------------------------------------------------------------------------------------------------------------------------------
 
 //teste camada de dados nova GA4
@@ -105,9 +109,8 @@ function(){
   }
 }
 
-
-
 //------------------------------------------------------------------------------------------------------------------------------------------
+
 window.dataLayer = window.dataLayer || [];
 window.dataLayer.push({
   event: 'view_item_list',
@@ -143,6 +146,7 @@ window.dataLayer.push({
     }]
   }
 });
+
 //---------------------------------------------------------------------------------
 
 function(){
@@ -153,6 +157,7 @@ function(){
     }
     }
   }
+
 //---------------------------------------------------------------------------------
  function(){
     if(document.querySelector('#txt-telefone-migracao').value != ''){return document.querySelector('#txt-telefone-migracao').value};
@@ -161,7 +166,7 @@ function(){
   }
 //----------------------------------------------------------------------------------
 
-Ve se o navegadordo cliente é dark ou light 
+//Ve se o navegadordo cliente é dark ou light 
 function () {
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
       return 'Dark';
@@ -173,15 +178,16 @@ function () {
   }
 
 
-//----------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
 
-apaga umas merda que eu n quero ver na tela
+//apaga umas merda que eu n quero ver na tela
 document.querySelector("#logo > ytd-yoodle-renderer > picture > img").style.display = "none";
 
-//----------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------
 
+// Impede a navegação ou fechamento
 window.addEventListener('beforeunload', (event) => {
-  event.preventDefault(); // Impede a navegação ou fechamento
+  event.preventDefault(); 
 });
 //---------------------------------------------------------------------------------------------
 
@@ -201,6 +207,7 @@ document.querySelector("#submit").addEventListener('click',function(){
     }
 })
 //--------------------------------------------------------------------------------------------------
+	
 <script>
 document.querySelector("#submit").addEventListener('click', function() {
     if (!document.querySelector("#submit").disabled) {
@@ -246,7 +253,8 @@ SetCookie('cookie_telefone', document.querySelector("#phonenumber").value, 1);
 /* */
 
 //----------------------------------------------------------------------------------------------------
-script simples pra adicionar algo ao datalayer 	
+	
+//script simples pra adicionar algo ao datalayer 	
 <script>
 dataLayer.push({
 event: 'CliqueiNofone',
@@ -255,9 +263,9 @@ tel: document.querySelector("#phonenumber").value
 </script>
 
 //-----------------------------------------------------------------------------------------------
-armazena no local storage
+//armazena no local storage
 	
-html personalizado
+//html personalizado
 
 <script>
   function a(){
@@ -269,7 +277,7 @@ html personalizado
   localStorage.setItem("myCat", a());
 </script>
 
-variavel
+//variavel
 
 function(){
   return window.localStorage.getItem('myCat');
