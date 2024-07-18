@@ -279,7 +279,7 @@ function(){
   return a;
 }
 //---------------------------------------------------------------------------------
-clique no botão eu_quero no clarorecarga https://clarorecarga.claro.com.br/recarga/landing
+/*clique no botão eu_quero no clarorecarga https://clarorecarga.claro.com.br/recarga/landing*/
 
 document.querySelector("#app-root > div > main > div.sc-crrsfI.crdgHM > div.BrainhubCarousel__container > div > div > ul > li:nth-child(29) > div > button").addEventListener("click", function() {
   console.log('Cliquei no botão e disparei o evento')
