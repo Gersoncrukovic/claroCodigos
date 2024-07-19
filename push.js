@@ -45,3 +45,16 @@ dataLayer.push({
 		}
 	}
 });
+//------------------------------------------------------------------------------------------------------------
+//teste camada de dados nova GA4
+dataLayer.push({
+'tipo_compra':'portability', 
+  'event': 'purchase',
+  'ecommerce': {
+    'items': [
+      {
+        'item_category': 'plano/celular/'
+      }
+    ]
+  }
+});
