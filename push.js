@@ -58,3 +58,40 @@ dataLayer.push({
     ]
   }
 });
+
+//--------------------------------------------------------------------------------------------------------------------------
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+  event: 'view_item_list',
+  ecommerce: {
+    items: [{
+      item_name: 'Finnish magical parka',
+      item_id: 'mp1122',
+      price: '31.10',
+      item_brand: 'PARKA4LIFE',
+      item_category: 'Apparel',
+      item_category2: 'Coats',
+      item_category3: 'Parkas',
+      item_category4: 'Unisex',
+      item_variant: 'Navy blue',
+      item_list_name: 'Featured items',
+      item_list_id: 'FI1',
+      index: 1,
+      quantity: '1'
+    },{
+      item_name: 'Swedish regular parka',
+      item_id: 'sp2323',
+      price: '92.00',
+      item_brand: 'PARKA4LIFE',
+      item_category: 'Apparel',
+      item_category2: 'Coats',
+      item_category3: 'Parkas',
+      item_category4: 'Unisex',
+      item_variant: 'Black',
+      item_list_name: 'Featured items',
+      item_list_id: 'FI1',
+      index: 2,
+      quantity: '1'
+    }]
+  }
+});
