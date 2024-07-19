@@ -1,12 +1,3 @@
-
-
-//cria um numero aleatorio arredondado
-function() {
-    return Math.floor(Math.random() * 100)+1;
-}
-
-//---------------------------------------------------------------------------------
-
 //teste de push manual
 dataLayer.push({
 	'event': 'purchase',
