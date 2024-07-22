@@ -106,6 +106,16 @@ event: 'CliqueiNofone',
 tel: document.querySelector("#phonenumber").value
 })
 </script>
+	
+<script>
+  function telefone() {
+    var coletaTelefone = document.querySelector("#phonenumber").value;
+    dataLayer.push({
+      event: 'CliqueiNofone',
+      tel: coletaTelefone
+    });
+  }
+</script>
 
 //-----------------------------------------------------------------------------------------------
 //armazena no local storage
