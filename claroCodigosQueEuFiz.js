@@ -101,7 +101,7 @@ document.querySelector("#submit").addEventListener('click', function() {
 	
 //script simples pra adicionar algo ao datalayer 	
 <script>
-dataLayer.push({
+window.dataLayer.push({
 event: 'CliqueiNofone',
 tel: document.querySelector("#phonenumber").value
 })
