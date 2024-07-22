@@ -117,6 +117,20 @@ tel: document.querySelector("#phonenumber").value
   }
 </script>
 
+//--------------------------------------------------------------------------------------------
+//funcao autoinvocavel  ( function (){ //mágica aqui  } )
+
+<script>
+  (function telefone () {
+    var coletaTelefone = document.querySelector("#phonenumber").value;
+    var sanitiza = '+55' + coletaTelefone.replace(/[()\-\s]/g, '');
+    window.dataLayer.push({
+      event: 'floodlight_telefone',
+      tel: sanitiza
+    });
+  })();
+</script>
+
 //-----------------------------------------------------------------------------------------------
 //armazena no local storage
 	
