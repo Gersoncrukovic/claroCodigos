@@ -168,5 +168,22 @@ document.querySelector("#app-root > div > main > div.sc-crrsfI.crdgHM > div.Brai
 });
 
 
+//---------------------------------------------------------------------------------------------------------------------------
+//pme
+//coleta phone
+function limpaPhoneNumber() {
+    var phone = document.querySelector("#phone").value;
+    phone = phone.replace(/[^0-9]/g, "");
+    phone = "+55" + phone;
+    return phone;
+}
+//coleta e-mail
+function(){
+  var email = document.querySelector('#email').value;
+  return email; 
+}
+
+
+
 
 
