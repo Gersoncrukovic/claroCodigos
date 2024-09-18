@@ -182,6 +182,78 @@ function(){
   var email = document.querySelector('#email').value;
   return email; 
 }
+//---------------------------------------------------------------------------------------------------------------------------
+function coletaPhoneNumber() {
+    if (document.querySelector('input#txt-telefone-migracao').value != '') {
+        var telefoneMigracao = document.querySelector('#txt-telefone-migracao').value;
+        telefoneMigracao = '+55' + telefoneMigracao.replace(/\D/g, '');
+        localStorage.setItem('telefoneMigracao', telefoneMigracao);
+        return telefoneMigracao;
+    }
+
+    if (document.querySelector('input#txt-telefone-portabilidade').value != '') {
+        var telefonePortabilidade = document.querySelector('#txt-telefone-portabilidade').value;
+        telefonePortabilidade = '+55' + telefonePortabilidade.replace(/\D/g, '');
+        localStorage.setItem('telefonePortabilidade', telefonePortabilidade);
+        return telefonePortabilidade;
+    }
+
+    if (document.querySelector('input#txt-telefone-aquisicao').value != '') {
+        var telefoneAquisicao = document.querySelector('#txt-telefone-aquisicao').value;
+        telefoneAquisicao = '+55' + telefoneAquisicao.replace(/\D/g, '');
+        localStorage.setItem('telefoneAquisicao', telefoneAquisicao);
+        return telefoneAquisicao;
+    }
+}
+
+//coleta email e manda pro local
+function(){
+var email = document.querySelector("input#txt-email").value
+
+return window.localStorage.setItem('e-mail', email);
+
+}
+
+//-------------------------------------------------------
+//pega do local com o get e faz caso migracao, portabilidade e aquisicao
+
+function getTelefone(situacao) {
+  switch(situacao) {
+    case 'aquisicao':
+      return window.localStorage.getItem('telefoneAquisicao');
+    case 'portabilidade':
+      return window.localStorage.getItem('telefonePortabilidade');
+    case 'migracao':
+      return window.localStorage.getItem('telefoneMigracao');
+    default:
+      return null; // Caso a situação não corresponda a nenhuma das opções
+  }
+}
+
+function getTelefone(situacao) {
+  switch(situacao) {
+    case 'aquisicao':
+      return window.localStorage.getItem('telefoneAquisicao');
+    case 'portabilidade':
+      return window.localStorage.getItem('telefonePortabilidade');
+    case 'migracao':
+      return window.localStorage.getItem('telefoneMigracao');
+    default:
+      return null;
+  }
+
+	function getTelefone() {
+  if ('aquisicao') {
+    return window.localStorage.getItem('telefoneAquisicao');
+  } else if ('portabilidade') {
+    return window.localStorage.getItem('telefonePortabilidade');
+  } else if ('migracao') {
+    return window.localStorage.getItem('telefoneMigracao');
+  } else {
+    return null;
+  }
+}
+
 
 
 
