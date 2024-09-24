@@ -254,8 +254,21 @@ function getTelefone(situacao) {
   }
 }
 
+//----------------------------------------------------------------------------------------------------
+//retorna a utm campaign
+function (){
+var url = {{Referrer}};
+// Função para obter o valor de um parâmetro da URL
+function getParameterByName(name, url) {
+    var urlObj = new URL(url);
+    return urlObj.searchParams.get(name);
+}
+// Obtendo o valor do utm_campaign
+var utmCampaign = getParameterByName('utm_campaign', url);
+// Exibindo o resultado
+document.cookie = "utm_campaign=" + utmCampaign + "; path=/; expires=Fri, 31 Dec 9999 23:59:59 GMT";
+return utmCampaign
 
-
-
+} 
 
 
