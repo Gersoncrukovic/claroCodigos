@@ -39,3 +39,21 @@ function () {
   return pageValue;
 }
  envia pro cookie simples
+
+
+function () {
+  var pageValue = {{dataLayer--page}};
+  
+  // Envia o valor para o cookie
+  document.cookie = "amazonPrime=" + pageValue + "; path=/";
+  
+  // Envia o valor para o localStorage
+  localStorage.setItem("amazonPrime", pageValue);
+  
+  return pageValue;
+}
+
+function getAmazonPrime() {
+  var pageValue = localStorage.getItem("amazonPrime");
+  return pageValue;
+}
