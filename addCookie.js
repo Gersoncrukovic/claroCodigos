@@ -32,3 +32,10 @@ function SetCookie(nomeCookie,valorCookie,expiracaoCookieDias ) {
 SetCookie('cookie_telefone', document.querySelector("#phonenumber").value, 1);
 
 </script>
+//--------------------------------------------------------------------------
+function () {
+  var pageValue = {{dataLayer--page}};
+  document.cookie = "amazonPrime=" + pageValue + "; path=/";
+  return pageValue;
+}
+ envia pro cookie simples
