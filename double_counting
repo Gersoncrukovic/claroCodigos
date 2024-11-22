@@ -1,0 +1,36 @@
+In this post, I’ll cover:
+
+1️⃣ Why Conversion Double Counting
+
+2️⃣ The Best Solution for GTM
+
+
+While auditing my client’s GTM setups, I often come across this common issue. But don’t worry—I’ve identified an effective solution to fix it!
+
+
+● Why Conversion Double Counting:
+
+→ The most common reason is multiple page loads on the thank-you page:
+
+→ If a user refreshes the thank-you page after landing on it, the trigger fires again.
+
+→ As a result, the conversion is counted twice, leading to inaccurate data.
+
+
+● Best Solution for GTM: 
+
+→ Here’s how you can prevent double counting using a simple JavaScript variable in GTM:
+
+Step 1: Go to GTM > Variables > New Variable, and select "Custom JavaScript".
+
+Step 2: Paste the following JavaScript code:
+
+function(){
+return performance.navigation.type === 1;
+}
+
+Step 3: Return to GTM > Open your target tag, and set a condition in your trigger to fire only when this Custom JavaScript variable returns false.
+
+
+→ This simple fix ensures that your conversion tag fires only once, even if the thank-you page is reloaded.
+
