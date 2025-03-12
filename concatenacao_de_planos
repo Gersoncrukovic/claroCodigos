@@ -1,0 +1,41 @@
+{
+    "event": "add_to_cart",
+    "noInteraction": "1",
+    "ecommerce": {
+        "items": [
+            {
+                "item_name": "30gb",
+                "item_id": "23467",
+                "price": "54.90",
+                "item_variant": "claro_movel",
+                "item_category": "plano_celular_controle"
+            },
+            {
+                "item_name": "samsung_galaxy_s25_ultra_512gb",
+                "item_id": "000000000000019141",
+                "price": "null",
+                "item_variant": "samsung",
+                "item_category": "aparelhos_celular"
+            },
+            {
+                "item_name": "chip",
+                "item_id": "000000000000023100",
+                "price": "null",
+                "item_variant": "claro_movel",
+                "item_category": "plano_celular_chips"
+            }
+        ]
+    },
+    "gtm.uniqueEventId": 1278
+}
+
+Pega os item cateogorys 
+
+function() {
+    var items = {{DLV - ecommerce.items}} || [];
+    var categories = items.map(function(item) {
+        return item.item_category;
+    });
+
+    return categories.join(" | ");
+}
