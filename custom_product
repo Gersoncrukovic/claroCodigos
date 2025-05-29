@@ -1,0 +1,23 @@
+function() {
+  var templatePath = window.__NEXT_DATA__ && window.__NEXT_DATA__.props && window.__NEXT_DATA__.props.pageProps && window.__NEXT_DATA__.props.pageProps.dynamicComponents && window.__NEXT_DATA__.props.pageProps.dynamicComponents.template;
+  var templatesEmpresa = templatePath ? templatePath.find(function(item) { return item.component === 'header'; }) : null;
+  var templateSegments = templatesEmpresa && templatesEmpresa.data && templatesEmpresa.data.data && templatesEmpresa.data.data.segment || [];
+  var allSegments = templateSegments.reduce(function(acc, item) {
+    return acc.concat(item.linkList ? [item].concat(item.linkList) : item);
+  }, []);
+  var activeSegment = allSegments.find(function(item) { return item.isActive; }) || null;
+  var segment = 'Desconhecido';
+  var segmentMapping = {
+    'grande': 'ge',
+    'pequena': 'pme',
+    'voce': 'pf'
+  };
+  for (var key in segmentMapping) {
+    if (activeSegment && activeSegment.labelGTM && activeSegment.labelGTM.indexOf(key) !== -1) {
+      segment = segmentMapping[key];
+      break;
+    }
+  }
+
+  return segment;
+}
