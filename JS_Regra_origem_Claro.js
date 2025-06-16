@@ -39,12 +39,12 @@ Tipo: Variável JavaScript Personalizada
 Código:
 
 function() {
-  const url = new URL(window.location.href);
-  const params = url.searchParams;
+  var url = new URL(window.location.href);
+  var params = url.searchParams;
 
-  const hasGclid = params.has('gclid');
-  const utm_source = params.get('utm_source');
-  const utm_medium = params.get('utm_medium');
+  var hasGclid = params.has('gclid');
+  var utm_source = params.get('utm_source');
+  var utm_medium = params.get('utm_medium');
 
   if (utm_source && utm_medium) {
     return `utm_source=${utm_source}+utm_medium=${utm_medium}`;
